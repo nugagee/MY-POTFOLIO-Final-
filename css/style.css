@@ -1,0 +1,1547 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fredoka One", cursive;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+/*-------------------------UTILITY SECTION--------------------------*/
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  width: auto;
+  height: 42px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-size: ;
+  font-weight: 600;
+  margin: 20px 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  background: transparent;
+  border: 1px solid #092c3e;
+  border-bottom: 2px solid black;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.4s ease;
+}
+/*-------------------------NAV MENU SECTION--------------------------*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.263);
+  padding: 10px 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+nav.sticky {
+  background: #092c3e;
+  color: white;
+}
+input[type="checkbox"]:checked ~ .outer nav {
+  background: transparent;
+}
+nav .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .logo .logo-img {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 30px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+nav .logo h2 {
+  font-family: "Lobster", cursive;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 800;
+  color: #092c3e;
+  cursor: pointer;
+  user-select: none;
+}
+nav.sticky .logo h2 {
+  color: white;
+}
+input[type="checkbox"]:checked ~ .outer nav .logo h2 {
+  color: white;
+}
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .menu ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+}
+nav .menu ul a {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #092c3e;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+nav.sticky .menu ul a {
+  color: #fff;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a {
+  color: white;
+}
+nav .menu ul a:hover {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a:hover {
+  color: red;
+}
+nav .menu ul a.active {
+  color: red;
+  border-bottom: 2px solid red;
+}
+input[type="checkbox"]:checked ~ .outer nav .menu ul a:active {
+  color: red;
+  border-bottom: 2px solid red;
+}
+/*-------------------------HAMBURGER SECTION--------------------------*/
+nav .hamburger i,
+nav .menu ul i {
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #092c3e;
+}
+input[type="checkbox"]:checked ~ .outer nav .hamburger i {
+  color: white;
+}
+nav .hamburger i:hover {
+  transform: scale(1.1);
+}
+.hamburger,
+nav .menu ul i {
+  display: none;
+}
+nav.sticky .menu ul i {
+  color: white;
+}
+nav.sticky .hamburger i {
+  color: white;
+}
+/*-------------------------TOGGLE SWITCH  SECTION--------------------------*/
+.content .toggle {
+  position: fixed;
+  right: 2%;
+  top: 1.5%;
+  background: #092c3e;
+  width: 45px;
+  height: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 5px;
+  cursor: pointer;
+  z-index: 2000;
+  transform: scale(0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.441);
+}
+input[type="checkbox"]:checked ~ .outer .toggle {
+  background: white;
+}
+.content .toggle i {
+  color: white;
+  font-size: 0.7rem;
+}
+
+input[type="checkbox"]:checked ~ .outer .content .toggle i {
+  color: #092c3e;
+}
+.toggle .circle {
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 0px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+input[type="checkbox"]:checked ~ .outer .circle {
+  margin-left: 21px;
+  background: #092c3e;
+}
+/*-------------------------HOME LANDING PAGE SECTION--------------------------*/
+section {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  padding: 0 5% 0 15%;
+  overflow: hidden;
+}
+section::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 45%;
+  background: #eaeaea7e;
+}
+input[type="checkbox"]:checked ~ .outer section {
+  background: #092c3e;
+}
+input[type="checkbox"]:checked ~ .outer section:after {
+  background: #eaeaea0f;
+}
+section .detail {
+  color: #505050;
+  z-index: 10;
+  width: 50%;
+}
+input[type="checkbox"]:checked ~ .outer .detail {
+  color: #f2f2f2;
+}
+section .detail p {
+  font-weight: 500;
+  color: #092c3e;
+  font-weight: 600;
+  width: 600px;
+}
+section .detail h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #092c3e;
+}
+section .detail h3 {
+  font-weight: 600;
+  max-width: 99%;
+  font-size: 1.5rem;
+  color: #092c3e;
+  margin: 10px 0;
+}
+section .detail h3 span {
+  color: red;
+}
+input[type="checkbox"]:checked ~ .outer .detail h2,
+input[type="checkbox"]:checked ~ .outer .detail h3,
+input[type="checkbox"]:checked ~ .outer .detail p {
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.318);
+}
+section .detail .btn {
+  position: relative;
+  white-space: nowrap;
+  border: 1px solid #092c3e;
+  padding: 10px 10px;
+  width: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #092c3e;
+  color: white;
+}
+input[type="checkbox"]:checked ~ .outer .btn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+section .img {
+  width: 50%;
+  z-index: 1;
+  margin: 10% 10% 0 0;
+}
+/*-------------------------ABOUT SECTION--------------------------*/
+.about {
+  position: relative;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  margin: 50px auto;
+  margin-top: -50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.263);
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgb(255, 255, 255);
+  z-index: 2;
+}
+input[type="checkbox"]:checked ~ .outer .about {
+  background: #092c3e;
+  color: white;
+}
+
+.about .det h2,
+.portfolio .head h2,
+.services .head h2,
+.contact .head h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #092c3e;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.318);
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
+input[type="checkbox"]:checked ~ .outer .det h2,
+input[type="checkbox"]:checked ~ .outer .head h2,
+input[type="checkbox"]:checked ~ .outer .services .head h2,
+input[type="checkbox"]:checked ~ .outer .contact .head h2 {
+  color: rgb(255, 111, 0);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.318);
+}
+.about .det h2::before,
+.portfolio .head h2::before,
+.services .head h2::before,
+.contact .head h2::before {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.215);
+  bottom: -5px;
+}
+input[type="checkbox"]:checked ~ .outer .det h2::before,
+input[type="checkbox"]:checked ~ .outer .head h2::before,
+input[type="checkbox"]:checked ~ .outer .services .head h2::before,
+input[type="checkbox"]:checked ~ .outer .contact .head h2::before {
+  background: rgba(255, 255, 255, 0.174);
+}
+.about .det h2::after,
+.portfolio .head h2::after,
+.services .head h2::after,
+.contact .head h2::after {
+  content: "";
+  position: absolute;
+  width: 5%;
+  height: 2px;
+  background: #092c3e;
+  bottom: -5px;
+  transition: 0.3s ease;
+}
+.about .det:hover h2::after,
+.portfolio:hover .head h2::after,
+.services:hover .head h2::after,
+.contact:hover .head h2::after {
+  width: 15%;
+}
+.about .det h3,
+.portfolio .head h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2em;
+  text-align: center;
+  color: red;
+  font-family: "Times New Roman", Times, serif;
+}
+.about .det p {
+  font-size: 0.7rem;
+  text-align: justify;
+  line-height: 2em;
+  font-weight: 500;
+}
+
+/*-------------------------PORTFOLIO SECTION--------------------------*/
+.portfolio {
+  position: relative;
+  background: #96959512;
+  padding: 50px 100px;
+}
+input[type="checkbox"]:checked ~ .outer .portfolio {
+  background: #092c3e;
+}
+.portfolio .head p {
+  text-align: center;
+  color: #092c3e;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+input[type="checkbox"]:checked ~ .outer .head p {
+  color: white;
+}
+.portfolio .project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 20px;
+}
+.portfolio .project .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.project .swiper-wrapper .pro-slide {
+  position: relative;
+  width: 100%;
+}
+.portfolio .project .swiper-pagination {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  right: 0;
+}
+.portfolio .project .pro-ima {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.633);
+  border-radius: 10px;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio .project .pro-ima img {
+  width: 100%;
+  height: 100%;
+}
+.portfolio .project .pro-det {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio .project .pro-det p {
+  text-align: center;
+  max-width: 500px;
+  position: relative;
+  width: 100%;
+  margin: 20px auto;
+  color: #092c3e;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.146);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+input[type="checkbox"]:checked ~ .outer .portfolio .project .pro-det p {
+  color: white;
+}
+.portfolio .project .pro-det a {
+  display: inline-block;
+  background: #092c3e;
+  padding: 10px 100px;
+  color: white;
+  border-radius: 5px;
+  margin: 10px auto;
+  text-align: center;
+  width: 60%;
+  font-weight: 700;
+  letter-spacing: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: 0.5s ease;
+}
+.portfolio .project .pro-det a:hover {
+  transform: scale(1.1);
+}
+input[type="checkbox"]:checked ~ .outer .portfolio .project .pro-det a {
+  background: white;
+  color: #092c3e;
+}
+.portfolio .see-more {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  background: #092c3e;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.242);
+  margin-bottom: 30px;
+}
+.portfolio .see-more a {
+  color: #fff;
+}
+
+input[type="checkbox"]:checked ~ .outer .see-more {
+  background: transparent;
+  border: 1px solid white;
+}
+.see-more:hover {
+  transform: scale(1.1);
+}
+.see-more:active {
+  background: #092c3e8e;
+  color: white;
+}
+/*-------------------------BOOK-CALL SECTION--------------------------*/
+.book {
+  position: relative;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  background: linear-gradient(rgba(0, 0, 0, 0.639), rgba(0, 0, 0, 0.674)),
+    url("/image/code3.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 0;
+}
+.book .call,
+.call2 {
+  width: auto;
+  max-width: 700px;
+  height: auto;
+  max-height: 250px;
+  background: #01131c;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px 30px;
+  margin: 30px 10px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+.book .call:hover,
+.book .call2:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.256);
+}
+.call h2,
+.call2 h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5em;
+}
+.call p,
+.call2 p {
+  color: rgb(200, 255, 0);
+  font-weight: 500;
+}
+.call button,
+.call2 button {
+  padding: 10px 20px;
+}
+
+.call2 {
+  background: #092c3e;
+}
+
+.call2 button {
+  background: #01131c;
+  color: white;
+}
+/*-------------------------SERVICES SECTION--------------------------*/
+.services {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 100px;
+  background: #96959512;
+}
+input[type="checkbox"]:checked ~ .outer .services {
+  background: #092c3e;
+}
+.services .serv-det {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+.serv-det .sub-head h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #181818;
+}
+input[type="checkbox"]:checked ~ .outer .serv-det .sub-head h2 {
+  color: white;
+}
+.serv-det .det-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.det-card .card {
+  width: 30%;
+  min-height: 200px;
+  height: auto;
+  background: #092c3e;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.653);
+  margin: 10px;
+  color: #fff;
+  position: relative;
+  padding: 25px;
+}
+input[type="checkbox"]:checked ~ .outer .det-card .card {
+  background: transparent;
+}
+
+.det-card .card span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(255, 111, 0);
+  color: #505050;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgb(255, 111, 0);
+}
+.det-card .card h4 {
+  border-bottom: 2px solid rgb(255, 111, 0);
+  display: inline-block;
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 0 20px rgb(255, 111, 0);
+}
+.det-card .card p {
+  font-size: 0.75rem;
+}
+/*-------------------------CONTACT SECTION--------------------------*/
+.contact {
+  padding: 50px 100px;
+  width: 100%;
+}
+input[type="checkbox"]:checked ~ .outer .contact {
+  background: #092c3ea1;
+}
+.contact .cont-det {
+  padding: 40px;
+}
+.contact .cont-det h4 {
+  color: red;
+  text-align: center;
+  font-weight: 600;
+}
+input[type="checkbox"]:checked ~ .outer .contact .cont-det h4 {
+  color: white;
+}
+/*-------------------------FORM SECTION--------------------------*/
+.contact .form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact .form-box {
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 20px;
+}
+
+.form-box h2 {
+  display: inline-block;
+  color: #092c3e;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.contact .form-in {
+  width: 50%;
+}
+
+input[type="checkbox"]:checked ~ .outer .form-box h2 {
+  color: white;
+}
+.form-box .input-box {
+  width: 100%;
+  position: relative;
+  height: 40px;
+  margin: 5px 0;
+}
+.input-box input {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background: #092c3e3e;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: none;
+  transition: 0.3s ease;
+  margin: 5px 0;
+  color: black;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-weight: 1.1rem;
+  color: rgb(118, 113, 113);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+input[type="checkbox"]:checked ~ .outer .input-box label {
+  color: white;
+}
+.form-box .input-box input:focus,
+.form-box .input-box input:valid {
+  background: transparent;
+  border-color: #505050;
+  color: black;
+}
+
+.form-box .input-box input:focus ~ label,
+.form-box .input-box input:valid ~ label {
+  top: 5px;
+  background: white;
+  color: #505050;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input:focus
+  ~ label,
+.form-box .input-box input:valid ~ label {
+  background: #092c3e3e;
+  color: white;
+}
+.form-box .mess-box {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+.form-box .mess-box textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  outline: none;
+  background: #092c3e3e;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  color: black;
+}
+.form-box .mess-box label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  font-weight: 1.1rem;
+  color: rgb(118, 113, 113);
+  pointer-events: none;
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+}
+input[type="checkbox"]:checked ~ .outer .form-box .mess-box label {
+  color: white;
+}
+.form-box .mess-box textarea:focus,
+.form-box .mess-box textarea:valid {
+  background: white;
+  border-color: #505050;
+  color: black;
+}
+input[type="checkbox"]:checked ~ .outer .form-box .mess-box textarea:focus,
+.form-box .mess-box textarea:valid {
+  background: transparent;
+  border: 2px solid #505050;
+  color: black;
+}
+.form-box .mess-box textarea:focus ~ label,
+.form-box .mess-box textarea:valid ~ label {
+  top: -6px;
+  background: white;
+  color: #505050;
+  font-size: 0.7rem;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .mess-box
+  textarea:focus
+  ~ label,
+.form-box .mess-box textarea:valid ~ label {
+  background: #092c3e3e;
+  color: white;
+}
+.form-box .input-box input[type="Submit"] {
+  background: #092c3e;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"] {
+  background: #092c3e;
+  border: transparent;
+  font-weight: 800;
+  color: white;
+}
+.form-box .input-box input[type="Submit"]:hover {
+  background: transparent;
+  border: 2px solid #50505058;
+  color: #505050;
+  font-weight: 700;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"]:hover {
+  transform: scale(1.1);
+}
+
+.form-box .input-box input[type="Submit"]:active {
+  background: #5050508b;
+  border: 2px solid #50505058;
+  color: rgb(239, 239, 239);
+  font-weight: 700;
+}
+.form-box .hidden {
+  visibility: hidden;
+  height: 0;
+}
+input[type="checkbox"]:checked
+  ~ .outer
+  .form-box
+  .input-box
+  input[type="Submit"]:active {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+.contact .info {
+  width: 50%;
+  padding: 10px 100px;
+}
+.contact .info h3 {
+  font-size: 0.8rem;
+  color: #092c3e;
+  font-weight: 800;
+  line-height: 2em;
+}
+.contact .info p {
+  font-size: 0.7rem;
+  opacity: 0.55;
+  font-weight: 600;
+}
+/*--------------------------FOOTER SECTION-----------------------*/
+footer {
+  width: 100vw;
+  height: 200px;
+  text-align: center;
+  color: #fff;
+  background-color: #092c3e;
+  padding-top: 50px;
+}
+input[type="checkbox"]:checked ~ .outer footer {
+  background: #f2f2f2;
+  color: #092c3e;
+  font-weight: 800;
+}
+footer h3 {
+  letter-spacing: 5px;
+  font-size: 1.4rem;
+}
+footer p {
+  font-size: 0.7rem;
+}
+
+footer .social a {
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+footer .social a i {
+  background: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px 0;
+  color: #092c3e;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked ~ .outer footer .social a i {
+  background: #092c3e;
+  color: white;
+}
+footer .social a:hover i {
+  transform: translateY(-3px);
+}
+footer .social a:active i {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+/*--------------------FIXED TOP SCROLL--------------------*/
+.fixed .top-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.fixed .top-fixed a {
+  color: white;
+  background: red;
+  padding: 0 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.653);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.fixed .top-fixed a:hover {
+  transform: scale(1.1);
+}
+/*----------------------------------FIXED SOCIAL ICON SECTION-----------------------*/
+.fixed .social-fixed {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 35px;
+  height: 170px;
+  width: 30px;
+  background: rgb(255, 255, 255);
+  padding: 5px;
+  z-index: 10;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed {
+  background: #092c3e;
+}
+.fixed .social-fixed::after {
+  content: "";
+  position: absolute;
+  height: 400px;
+  width: 1px;
+  background: #50505054;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed::after {
+  background: #092c3e;
+}
+.fixed .social-fixed a i {
+  margin: 0;
+  color: #092c3e;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 20px;
+  background: white;
+}
+input[type="checkbox"]:checked ~ .outer .fixed .social-fixed a i {
+  color: white;
+  background: #092c3e;
+}
+.fixed .social-fixed a:hover i {
+  transform: scale(1.1);
+}
+.fixed .social-fixed a:active i {
+  color: rgba(255, 0, 0, 0.461);
+}
+/*------------------TOGGLE SWITCH------------------*/
+#switch {
+  display: none;
+}
+/*---------------------SCROLLBAR SECTION-------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  border: 7px solid #505050;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(white, #505050);
+}
+/*-------------------------RESPONSIVENESS SECTION--------------------------*/
+@media (max-width: 700px) {
+  /*--------------------NAV RESPONSIVE----------------------------*/
+  .hamburger {
+    display: flex;
+    z-index: 100;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  nav .menu ul i {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    z-index: 100;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  nav .logo h2 {
+    font-size: 0.8rem;
+  }
+  nav .menu ul a {
+    font-size: 0.6rem;
+  }
+  nav .menu ul {
+    position: fixed;
+    width: 100vw;
+    height: 70vh;
+    top: 0;
+    right: 0;
+    background: #092c3ee9;
+    clip-path: circle(50px at right -50px);
+    -webkit-clip-path: circle(50px at right -50px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  nav .menu ul.open {
+    clip-path: circle(1100px at right -50px);
+    -webkit-clip-path: circle(1100px at right -50px);
+  }
+
+  nav .menu ul a {
+    opacity: 0;
+  }
+  nav .menu ul a:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  nav .menu ul a:nth-child(2) {
+    transition: all 0.5s ease 0.3s;
+  }
+  nav .menu ul a:nth-child(3) {
+    transition: all 0.5s ease 0.4s;
+  }
+  nav .menu ul a:nth-child(4) {
+    transition: all 0.5s ease 0.5s;
+  }
+  nav .menu ul a:nth-child(5) {
+    transition: all 0.5s ease 0.6s;
+  }
+  nav .menu ul a.fade {
+    opacity: 1;
+    color: white;
+    transform: scale(1.2);
+  }
+  /*--------------TOGGLE RESPONSIVE -----------------------*/
+  .content .toggle {
+    top: 2%;
+    transform: scale(0.7);
+  }
+  .content .toggle i {
+    color: white;
+  }
+  input[type="checkbox"]:checked ~ .outer .content .toggle i {
+    color: #092c3e;
+  }
+  /*--------------SECTION RESPONSIVE -----------------------*/
+  /*
+  section .detail {
+    width: 100%;
+  }
+  section {
+    padding-left: 10%;
+    position: relative;
+  }
+  section .detail h2 {
+    font-size: 2.5rem;
+  }
+  section .detail h3 {
+    font-size: 1rem;
+  }
+  section .detail p {
+    max-width: 450px;
+  }
+  section .img {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    opacity: 0.8;
+  }
+  button {
+    width: 100px;
+    height: 35px;
+  }
+  */
+  /*------------------ABOUT RESPONSIVE--------*/
+  .about {
+    padding: 25px;
+    justify-content: center;
+  }
+
+  .about .det {
+    width: 100%;
+  }
+  .about .det h2 {
+    font-size: 1rem;
+  }
+  .about .det p {
+    font-size: 0.6rem;
+  }
+  /*-------------------------TITLE RESPONSIVENESS SECTION--------------------------*/
+  .title {
+    font-size: 0.7rem;
+  }
+  /*-------------------------PORTFOLIO RESPONSIVENESS SECTION--------------------------*/
+  /*
+  .portfolio {
+    width: 100%;
+    margin: 0;
+    padding: 50px 10px;
+  }
+  .portfolio .project {
+    width: 100%;
+  }
+  .portfolio .project .pro-ima {
+    width: 70%;
+    height: 150px;
+  }
+
+  .portfolio .project .swiper-button-next {
+    margin-right: -10px;
+    margin-top: 60px;
+  }
+  .portfolio .project .swiper-button-prev {
+    margin-left: -10px;
+    margin-top: 60px;
+  }
+  .portfolio .project .pro-det a {
+    padding: 10px;
+  }
+  .portfolio .see-more {
+    font-size: 0.7rem;
+    margin-right: -10px;
+    letter-spacing: 1px;
+  }*/
+  /*-------------------------BOOK  RESPONSIVENESS  SECTION--------------------------*/
+  .call h2,
+  .call2 h2 {
+    font-size: 1.5rem;
+  }
+  .call p,
+  .call2 p {
+    font-size: 1rem;
+  }
+  .call button,
+  .call2 button {
+    width: 60%;
+  }
+
+  /*-------------------------SERVICES RESPONSIVENESS  SECTION--------------------------*/
+
+  .serv-det .sub-head h2 {
+    font-size: 1.6rem;
+  }
+  .serv-det .det-card {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .det-card .card {
+    width: 80%;
+  }
+  /*-------------------------CONTACT RESPONSIVENESS  SECTION--------------------------*/
+
+  .contact {
+    width: 100%;
+    padding: 50px 10px;
+  }
+  .contact .cont-det h4 {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .contact .form-box {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .contact .form-box .form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .form-box .form .form-in,
+  .form-box .form .info {
+    width: 80%;
+  }
+  .form-box .form .info {
+    padding: 10px 20px;
+  }
+  /*-------------------------FORM RESPONSIVENESS  SECTION--------------------------*/
+  .input-box label,
+  .form-box .mess-box label {
+    font-size: 0.7rem;
+  }
+  .form-box .input-box input:focus ~ label,
+  .form-box .input-box input:valid ~ label {
+    font-size: 0.5;
+  }
+  .form-box .mess-box textarea {
+    font-size: 0.7;
+  }
+  .form-box .mess-box textarea:focus ~ label,
+  .form-box .mess-box textarea:valid ~ label {
+    font-size: 0.5;
+  }
+  /*-------------------------FOOTER RESPONSIVENESS  SECTION--------------------------*/
+  footer {
+    height: 170px;
+    padding: 30px;
+  }
+  footer h3 {
+    font-size: 1rem;
+  }
+  footer p {
+    font-size: 0.5rem;
+  }
+  footer .social a i {
+    transform: scale(0.7);
+    margin: 10px 0;
+  }
+  .fixed .top-fixed a {
+    transform: scale(0.7);
+  }
+  .fixed .social-fixed a i {
+    transform: scale(0.7);
+  }
+}
+
+/*-------------------------RESPONSIVENESS SECTION--------------------------*/
+@media (max-width: 750px) {
+  /*--------------------NAV RESPONSIVE----------------------------*/
+
+  nav .logo {
+    margin-left: -40px;
+  }
+  .hamburger {
+    display: flex;
+    z-index: 100;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  nav .menu ul i {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    z-index: 100;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  nav .logo h2 {
+    font-size: 0.8rem;
+  }
+  nav .menu ul a {
+    font-size: 0.6rem;
+  }
+  nav .menu ul {
+    position: fixed;
+    width: 100vw;
+    height: 70vh;
+    top: 0;
+    right: 0;
+    background: #092c3ee9;
+    clip-path: circle(50px at right -50px);
+    -webkit-clip-path: circle(50px at right -50px);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  nav .menu ul.open {
+    clip-path: circle(1100px at right -50px);
+    -webkit-clip-path: circle(1100px at right -50px);
+  }
+
+  nav .menu ul a {
+    opacity: 0;
+  }
+  nav .menu ul a:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+  }
+  nav .menu ul a:nth-child(2) {
+    transition: all 0.5s ease 0.3s;
+  }
+  nav .menu ul a:nth-child(3) {
+    transition: all 0.5s ease 0.4s;
+  }
+  nav .menu ul a:nth-child(4) {
+    transition: all 0.5s ease 0.5s;
+  }
+  nav .menu ul a:nth-child(5) {
+    transition: all 0.5s ease 0.6s;
+  }
+  nav .menu ul a.fade {
+    opacity: 1;
+    color: white;
+    transform: scale(1.2);
+  }
+  /*--------------TOGGLE RESPONSIVE -----------------------*/
+  .content .toggle {
+    top: 2%;
+    transform: scale(0.7);
+  }
+  .content .toggle i {
+    color: white;
+  }
+  input[type="checkbox"]:checked ~ .outer .content .toggle i {
+    color: #092c3e;
+  }
+  /*--------------TOGGLE RESPONSIVE -----------------------*/
+  .content .toggle {
+    top: 1%;
+    transform: scale(0.8);
+  }
+  .content .toggle i {
+    color: white;
+  }
+  input[type="checkbox"]:checked ~ .outer .content .toggle i {
+    color: #092c3e;
+  }
+  /*--------------SECTION RESPONSIVE -----------------------*/
+  section .detail {
+    width: 100%;
+  }
+  section {
+    padding: 0 5%;
+    margin-top: -30px;
+  }
+  section .detail {
+    margin-top: 20%;
+  }
+  section .detail h2 {
+    font-size: 2.5rem;
+  }
+  section .detail h3 {
+    font-size: 1rem;
+  }
+  section .detail p {
+    max-width: 300px;
+    text-align: justify;
+  }
+  section .img {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+  }
+  section .img img {
+    opacity: 0.8;
+  }
+  button {
+    width: 100px;
+    height: 35px;
+  }
+  /*------------------ABOUT RESPONSIVE--------*/
+  .about {
+    padding: 25px 10px;
+    justify-content: center;
+    margin-top: -30px;
+  }
+  .about .det {
+    width: 100%;
+  }
+  .about .det h2 {
+    font-size: 1rem;
+  }
+  .about .det h3,
+  .portfolio .head h3 {
+    font-size: 1.5rem;
+  }
+  .about .det p {
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+
+  /*-------------------------PORTFOLIO RESPONSIVENESS SECTION--------------------------*/
+  .container {
+    overflow-x: hidden;
+  }
+  .portfolio {
+    width: 100%;
+    margin: 0;
+    padding: 50px 10px;
+  }
+  .portfolio .project {
+    width: 100%;
+  }
+  .portfolio .project .pro-ima {
+    width: 80%;
+    height: 150px;
+  }
+
+  .portfolio .project .pro-det {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .portfolio .project .swiper-button-next {
+    margin-right: -10px;
+    margin-top: 60px;
+  }
+  .portfolio .project .swiper-button-prev {
+    margin-left: -10px;
+    margin-top: 60px;
+  }
+  .portfolio .project .pro-det a {
+    padding: 10px;
+  }
+  .portfolio .see-more {
+    font-size: 0.7rem;
+    margin-right: -10px;
+    letter-spacing: 1px;
+  }
+  /*-------------------------BOOK  RESPONSIVENESS  SECTION--------------------------*/
+  .call h2,
+  .call2 h2 {
+    font-size: 1.5rem;
+  }
+  .call p,
+  .call2 p {
+    font-size: 0.8rem;
+  }
+  .call button,
+  .call2 button {
+    width: 100%;
+  }
+  .serv-det .det-card {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+  }
+  .det-card .card {
+    width: 80%;
+  }
+  /*-------------------------SERVICES RESPONSIVENESS  SECTION--------------------------*/
+  .services {
+    width: 100%;
+    padding: 50px 5px;
+  }
+  .services .serv-det {
+    padding: 20px 0;
+  }
+  .serv-det .sub-head h2 {
+    font-size: 1.5rem;
+  }
+  /*-------------------------CONTACT RESPONSIVENESS  SECTION--------------------------*/
+  .contact {
+    width: 100%;
+    padding: 50px 10px;
+  }
+  .contact .cont-det h4 {
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .contact .form-box {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .contact .form-box .form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .form-box .form .form-in,
+  .form-box .form .info {
+    width: 80%;
+  }
+  .form-box .form .info {
+    padding: 10px 20px;
+  }
+  /*-------------------------FORM RESPONSIVENESS  SECTION--------------------------*/
+  .input-box label,
+  .form-box .mess-box label {
+    font-size: 0.7rem;
+  }
+  .form-box .input-box input:focus ~ label,
+  .form-box .input-box input:valid ~ label {
+    font-size: 0.5;
+  }
+  .form-box .mess-box textarea {
+    font-size: 0.7;
+  }
+  .form-box .mess-box textarea:focus ~ label,
+  .form-box .mess-box textarea:valid ~ label {
+    font-size: 0.5;
+  }
+  /*-------------------------FOOTER RESPONSIVENESS  SECTION--------------------------*/
+  footer {
+    height: 170px;
+    padding: 30px;
+  }
+  footer h3 {
+    font-size: 1rem;
+  }
+  footer p {
+    font-size: 0.5rem;
+  }
+  footer .social a i {
+    transform: scale(0.7);
+    margin: 10px 0;
+  }
+  .fixed .top-fixed a {
+    transform: scale(0.7);
+  }
+  .fixed .social-fixed a i {
+    transform: scale(0.7);
+  }
+
+  .fixed .social-fixed {
+    display: none;
+  }
+}
